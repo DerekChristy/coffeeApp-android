@@ -1,42 +1,40 @@
 package com.example.coffeegrab;
 
-public class Coffee {
+class Coffee {
 
     int image;
-    String name;
-    float price;
-    int quantity;
+    private String name;
+    private String price;
+    private int quantity;
 
-    public Coffee(int image, String name, float price){
+    Coffee(int image, String name, String price, int quantity){
         this.image = image;
         this.name = name;
         this.price = price;
-        quantity = 0;
+        this.quantity = quantity;
     }
 
-    public int getImage() {
+    int getImage() {
         return image;
     }
 
-    public String getName() {
+    String getName() {
         return name;
     }
 
-    public float getPrice() {
+    String getPrice() {
         return price;
     }
-    public int getQuantity(){
-        return quantity;
-    }
 
-    public void addItem(){
+    int getQuantity(){ return quantity; }
+
+    void addItem(){
         quantity++;
     }
 
-    public void removeItem(){
-        if(quantity < 0){
-            return;
+    void removeItem(){
+        if(quantity > 0) {
+            quantity--;
         }
-        quantity--;
     }
 }
