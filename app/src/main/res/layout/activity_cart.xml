@@ -32,9 +32,11 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="24dp"
             android:layout_marginBottom="16dp"
+            android:fontFamily="monospace"
             android:text="Total Rs."
             android:textColor="@android:color/black"
-            android:textSize="24sp" />
+            android:textSize="20sp"
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/priceTxt"
@@ -42,7 +44,8 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:textColor="@android:color/black"
-            android:textSize="24sp" />
+            android:textSize="20sp"
+            android:textStyle="bold" />
 
     </LinearLayout>
 

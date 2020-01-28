@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -40,6 +41,12 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void openCart(View view) {
+
+        if(items.isEmpty()) {
+            Toast.makeText(this,"Cart Empty", Toast.LENGTH_SHORT).show();
+            return;
+        }
+
         Log.d("COFFEE" ,"COFFEE CART ITEMS: " + items);
         Intent intent = new Intent(this, CartActivity.class);
 //        Bundle args = new Bundle();
