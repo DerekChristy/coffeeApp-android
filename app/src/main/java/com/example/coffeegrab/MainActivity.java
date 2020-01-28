@@ -13,13 +13,13 @@ import java.util.ArrayList;
 public class MainActivity extends AppCompatActivity {
 
     static ArrayList<Coffee> items;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
         ArrayList<Coffee> coffeeList = new ArrayList<>();
-       // cartItems = new ArrayList<>();
 
         //TODO:: Add something in coffeeList...
 
@@ -42,9 +42,10 @@ public class MainActivity extends AppCompatActivity {
     public void openCart(View view) {
         Log.d("COFFEE" ,"COFFEE CART ITEMS: " + items);
         Intent intent = new Intent(this, CartActivity.class);
-        Bundle args = new Bundle();
-        args.putSerializable("list", items);
-        intent.putExtra("bundle", args);
+//        Bundle args = new Bundle();
+//        args.putSerializable("list", items);
+//        intent.putExtra("bundle", args);
+        intent.putExtra("list", (ArrayList<Coffee>) items);
         startActivity(intent);
     }
 }

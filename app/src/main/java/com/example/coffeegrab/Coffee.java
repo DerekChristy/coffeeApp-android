@@ -1,6 +1,9 @@
 package com.example.coffeegrab;
 
-class Coffee {
+import java.io.Serializable;
+
+class Coffee implements Serializable
+{
 
     int image;
     private String name;

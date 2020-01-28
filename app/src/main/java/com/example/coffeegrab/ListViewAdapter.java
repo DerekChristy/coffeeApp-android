@@ -96,10 +96,8 @@ public class ListViewAdapter extends ArrayAdapter<Coffee> {
                 }
                 holder.quantity.setText(String.valueOf(coffee.getQuantity()));
                 Log.d("COFFEE", "CART ITEMS: " + cartItems.size());
-
             }
         });
-
         return convertView;
     }
 }

@@ -6,7 +6,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -56,7 +55,7 @@ public class CartListAdapter extends ArrayAdapter<Coffee> {
         }
 
         holder.name.setText(coffee.getName());
-        holder.quantity.setText(coffee.getQuantity());
+        holder.quantity.setText(String.valueOf(coffee.getQuantity()));
         float total = Float.valueOf(coffee.getPrice()) * coffee.getQuantity();
         holder.price.setText(String.valueOf(total));
 

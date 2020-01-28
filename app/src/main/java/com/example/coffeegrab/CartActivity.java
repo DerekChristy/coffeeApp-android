@@ -18,11 +18,13 @@ public class CartActivity extends AppCompatActivity {
         setContentView(R.layout.activity_cart);
 
         Intent intent = getIntent();
-        Bundle args = intent.getBundleExtra("bundle");
-        cartItems = (ArrayList<Coffee>) args.getSerializable("list");
+//        Bundle args = intent.getBundleExtra("bundle");
+//        cartItems = (ArrayList<Coffee>) args.getSerializable("list");
+        cartItems = (ArrayList<Coffee>) intent.getSerializableExtra("list");
         ListView listView = findViewById(R.id.itemsList);
         CartListAdapter adapter = new CartListAdapter(this, R.layout.cart_item, cartItems);
         listView.setAdapter(adapter);
+
     }
 
     public void prevActivity(View view) {
