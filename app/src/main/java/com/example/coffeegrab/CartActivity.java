@@ -40,6 +40,7 @@ public class CartActivity extends AppCompatActivity {
 
     public void confirmOrder(View view) {
         Log.d("COFFEE", "Order confirmed");
-
+        Intent intent = new Intent(getApplicationContext(), OrderConfirmed.class);
+        startActivity(intent);
     }
 }

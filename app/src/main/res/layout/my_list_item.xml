@@ -39,14 +39,15 @@
                 android:layout_height="wrap_content"
                 android:text="Café Latte"
                 android:textAppearance="@style/TextAppearance.AppCompat.Large"
-                android:textSize="30sp" />
+                android:textSize="24sp" />
 
             <TextView
                 android:id="@+id/priceCoffee"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-condensed-medium"
                 android:text="Rs. 149"
-                android:textSize="24sp" />
+                android:textSize="18sp" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -59,8 +60,9 @@
                     android:layout_height="wrap_content"
                     android:layout_margin="8dp"
                     android:layout_weight="1"
-                    android:backgroundTint="#00E676"
+                    android:backgroundTint="@color/colorPrimaryDark"
                     android:text="-"
+                    android:textColor="@android:color/white"
                     android:textSize="24dp" />
 
                 <TextView
@@ -79,8 +81,9 @@
                     android:layout_height="wrap_content"
                     android:layout_margin="8dp"
                     android:layout_weight="1"
-                    android:backgroundTint="#FFA726"
+                    android:backgroundTint="@color/colorPrimaryDark"
                     android:text="+"
+                    android:textColor="@android:color/white"
                     android:textSize="24dp" />
 
             </LinearLayout>
