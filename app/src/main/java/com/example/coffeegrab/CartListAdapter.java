@@ -57,7 +57,7 @@ public class CartListAdapter extends ArrayAdapter<Coffee> {
 
         holder.name.setText(coffee.getName());
         holder.quantity.setText(coffee.getQuantity());
-        float total = Float.valueOf(coffee.getPrice()) * Float.valueOf(coffee.getQuantity());
+        float total = Float.valueOf(coffee.getPrice()) * coffee.getQuantity();
         holder.price.setText(String.valueOf(total));
 
         return convertView;
