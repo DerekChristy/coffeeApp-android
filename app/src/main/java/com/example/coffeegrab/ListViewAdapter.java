@@ -3,6 +3,7 @@ package com.example.coffeegrab;
 import android.content.Context;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,6 +17,7 @@ public class ListViewAdapter extends ArrayAdapter<Coffee> {
 
     private Context context;
     private int resource;
+    ArrayList<Coffee> cartItems;
 
     static class ViewHolder {
         TextView name;
@@ -30,6 +32,7 @@ public class ListViewAdapter extends ArrayAdapter<Coffee> {
         super(context, resource, list);
         this.context = context;
         this.resource = resource;
+        cartItems = new ArrayList<>();
     }
 
     @NonNull
@@ -75,6 +78,11 @@ public class ListViewAdapter extends ArrayAdapter<Coffee> {
             @Override
             public void onClick(View v) {
                 coffee.removeItem();
+                if(coffee.getQuantity() == 0) {
+                    if(cartItems.size() > 0)
+                        cartItems.remove(coffee);
+                }
+                Log.d("COFFEE", "CART ITEMS: " + cartItems.size());
                 holder.quantity.setText(String.valueOf(coffee.getQuantity()));
             }
         });
@@ -83,7 +91,12 @@ public class ListViewAdapter extends ArrayAdapter<Coffee> {
             @Override
             public void onClick(View v) {
                 coffee.addItem();
+                if(coffee.getQuantity() == 1) {
+                    cartItems.add(coffee);
+                }
                 holder.quantity.setText(String.valueOf(coffee.getQuantity()));
+                Log.d("COFFEE", "CART ITEMS: " + cartItems.size());
+
             }
         });
 //        ImageView imageCoffee = view.findViewById(R.id.imageCoffee);
