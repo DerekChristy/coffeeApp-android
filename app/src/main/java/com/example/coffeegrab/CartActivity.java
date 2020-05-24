@@ -29,6 +29,7 @@ public class CartActivity extends AppCompatActivity {
         }
         priceTxt = findViewById(R.id.priceTxt);
         priceTxt.setText(String.valueOf(amount));
+
         CartListAdapter adapter = new CartListAdapter(this, R.layout.cart_item, cartItems);
         listView.setAdapter(adapter);
     }
